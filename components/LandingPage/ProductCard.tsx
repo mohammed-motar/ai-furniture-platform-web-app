@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { cn, formatPrice } from '@/lib/utils';
-import { AddToCartButton } from '@/components/app/AddToCartButton';
-import { StockBadge } from '@/components/app/StockBadge';
+import { AddToCartButton } from '@/components/AddToCartButton';
+import { StockBadge } from '@/components/StockBadge';
 import type { FILTER_PRODUCTS_BY_NAME_QUERY_RESULT } from '@/sanity.types';
 
 type Product = FILTER_PRODUCTS_BY_NAME_QUERY_RESULT[number];
@@ -72,7 +72,7 @@ export function ProductCard({ product }: ProductCardProps) {
           {isOutOfStock && (
             <Badge
               variant='destructive'
-              className='absolute right-3 top-3 rounded-full px-3 py-1 text-xs font-medium shadow-lg'
+              className='bg-red-600 text-white absolute right-3 top-3 rounded-full px-3 py-2 text-xs font-medium shadow-lg'
             >
               Out of Stock
             </Badge>
